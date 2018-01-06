@@ -1,6 +1,11 @@
 package com.dscrape.app.war.web.controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.dscrape.engine.web.crawler.base.IContentCrawler;
+import com.dscrape.engine.web.crawler.services.CrawlerService;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
@@ -18,7 +23,15 @@ public class RestController {
 		 * 
 		 * return content;
 		 */
-		return "I am running :)";
+		String Content ="";
+		List<IContentCrawler> crawlers = CrawlerService.getCrawlers();
+		for(IContentCrawler crawler:crawlers) {
+			Content += crawler.getContent();
+		}
+		
+		return Content;
 	}
+	
+	
 
 }
