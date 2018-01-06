@@ -62,7 +62,7 @@ public class MongoDbStorageManagerImpl implements IStorageManager {
 	}
 
 	@Override
-	public void initialize(String configFile) {
+	public void initialize(String configFile) throws Exception {
 		configuration = new MongoDbStorageConfig(configFile);
 		createMongoClient(configuration.getDatabaseConfig());
 		createCollections(configuration.getCollections());

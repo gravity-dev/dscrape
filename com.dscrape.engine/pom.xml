@@ -19,7 +19,7 @@
         <dependency>
 		    <groupId>com.gravity.app</groupId>
 		    <artifactId>com.dscrape.app.utils</artifactId>
-		    <version>1.0.0-SNAPSHOT</version>
+		    <version>${dscrape.version}</version>
 		</dependency>        <dependency>
 		    <groupId>org.jsoup</groupId>
 		    <artifactId>jsoup</artifactId>

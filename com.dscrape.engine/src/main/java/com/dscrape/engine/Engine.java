@@ -51,7 +51,7 @@ public class Engine {
 				EngineLoggerFactory.info("********************* ENGINE STARTED *********************");
 			} catch (Exception ex) {
 				EngineLoggerFactory.severe("ENGINE FAILED TO START");
-				throw new Exception("ENGINE FAILED TO START", ex);
+				throw new Exception("--------------------- ENGINE FAILED TO START ---------------------", ex);
 			}
 		}
 		return engine;
@@ -59,8 +59,9 @@ public class Engine {
 
 	/**
 	 * Start engine
+	 * @throws Exception 
 	 */
-	private void init() {
+	private void init() throws Exception {
 		EngineLoggerFactory.info("Starting engine configuration");
 		initConfugration();
 
@@ -68,7 +69,7 @@ public class Engine {
 		startUpStorage();
 	}
 
-	private void startUpStorage() {
+	private void startUpStorage() throws Exception {
 		ApplicationConfig appConfig = new ApplicationConfig(
 				YamlReader.parseYamlResource(Engine.class, APPLICATION_CONFIG_FILE));
 		storageService = instantiate(appConfig.getStorageConfig().getProviderClass(), IStorageService.class);

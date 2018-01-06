@@ -11,6 +11,6 @@ public interface IStorageManager {
 	public String getStorageType();
 
 	public String getStorageId();
-	
-	public void initialize(String configFile);
+
+	public void initialize(String configFile) throws Exception;
 }

@@ -7,6 +7,12 @@ import java.util.Map;
 
 import org.yaml.snakeyaml.Yaml;
 
+/**
+ * Yaml file parser
+ * 
+ * @author arvind
+ *
+ */
 public class YamlReader {
 
 	private static Yaml yaml = new Yaml();
@@ -17,18 +23,18 @@ public class YamlReader {
 	 * @param filePath
 	 * @return
 	 */
-	public static Map<String, Object> parseYamlFile(String filePath) {
+	public static Map<String, Object> parseYamlFile(String filePath) throws Exception {
 
 		File file = new File(filePath);
 
 		if (!file.isFile()) {
-			throw new RuntimeException("No Configration file found for the dscrape mondo engine");
+			throw new Exception("No Configration file found for:" + filePath);
 		}
 		Map<String, Object> config = null;
 		try (InputStream stream = new FileInputStream(file)) {
 			config = yaml.load(stream);
 		} catch (Exception ex) {
-			throw new RuntimeException("Mongo db Configuration loading ERROR: " + ex.getMessage(), ex);
+			throw new Exception("Configuration loading ERROR: " + filePath, ex);
 		}
 		return config;
 	}
@@ -45,7 +51,7 @@ public class YamlReader {
 		try (InputStream in = clazz.getClassLoader().getResourceAsStream(resourceName)) {
 			yamlConfig = yaml.loadAs(in, clazz);
 		} catch (Exception ex) {
-			throw new RuntimeException("Couldnot find application yaml configuration: ");
+			throw new RuntimeException("Couldnot find yaml configuration: " + resourceName);
 		}
 		return yamlConfig;
 	}
@@ -62,7 +68,7 @@ public class YamlReader {
 		try (InputStream in = clazz.getClassLoader().getResourceAsStream(resourceName)) {
 			yamlConfig = yaml.load(in);
 		} catch (Exception ex) {
-			throw new RuntimeException("Couldnot find application yaml configuration: ");
+			throw new RuntimeException("Couldnot find application yaml configuration: " + resourceName);
 		}
 		return yamlConfig;
 	}

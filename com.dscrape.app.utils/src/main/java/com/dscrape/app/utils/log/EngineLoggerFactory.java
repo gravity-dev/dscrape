@@ -5,10 +5,6 @@ import org.slf4j.LoggerFactory;
 
 public class EngineLoggerFactory {
 
-	public EngineLoggerFactory() {
-
-	}
-
 	private static Logger logger = LoggerFactory.getLogger(EngineLoggerFactory.class);
 
 	public static void info(String message) {

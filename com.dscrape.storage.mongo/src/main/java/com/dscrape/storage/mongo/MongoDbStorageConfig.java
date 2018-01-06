@@ -1,13 +1,11 @@
 package com.dscrape.storage.mongo;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.yaml.snakeyaml.Yaml;
+import com.dscrape.app.utils.file.YamlReader;
 
 /**
  * Database Yaml configuration reader. Do not initialize this class more than
@@ -28,26 +26,15 @@ public final class MongoDbStorageConfig {
 	 * com.dscrape.mongo.config can override this file location.
 	 * 
 	 * @param cfgFile
+	 * @throws Exception
 	 */
-	public MongoDbStorageConfig(String cfgFile) {
+	public MongoDbStorageConfig(String cfgFile) throws Exception {
 		String path = System.getProperty(CONFIG_PROPERTY);
 		if (path == null || path.isEmpty()) {
 			path = System.getProperty("catalina.home") + File.separatorChar + "conf" + File.separatorChar + cfgFile;
 		}
-
-		Yaml yaml = new Yaml();
-		File file = new File(path);
-
-		if (!file.isFile()) {
-			throw new RuntimeException("No Configration file found for the dscrape mondo engine");
-		}
-
-		try (InputStream stream = new FileInputStream(file)) {
-			config = yaml.load(stream);
-			init();
-		} catch (Exception ex) {
-			throw new RuntimeException("Mongo db Configuration loading ERROR: " + ex.getMessage(), ex);
-		}
+		config = YamlReader.parseYamlFile(path);
+		init();
 	}
 
 	@SuppressWarnings("unchecked")
