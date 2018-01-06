@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.gravity.app</groupId>
+  <artifactId>com.dscrape.storage.mongo</artifactId>
+  <packaging>jar</packaging>
+
+  <name>com.dscrape.storage.mongo</name>
+  <url>http://maven.apache.org</url>
+
+  <!-- Inherit defaults from Spring Boot -->
+    <parent>
+        <groupId>com.gravity</groupId>
+        <artifactId>com.gravity.dscrape</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <!-- Add typical dependencies for a web application -->
+    <dependencies>
+        <dependency>
+			<groupId>com.gravity.app</groupId>
+			<artifactId>com.dscrape.engine</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mongojack</groupId>
+			<artifactId>mongojack</artifactId>
+			<version>2.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>3.6.1</version>
+		</dependency>		
+    </dependencies> 
+	
+</project>

@@ -1,0 +1,6 @@
+server:
+    port: 8888
+storage:
+    storage.manager.class: com.dscrape.storage.mongo.MongoDbStorageManagerImpl
+    provider.class: com.dscrape.storage.mongo.service.StorageServiceFacade
+    db.config.file: dbconfig.yaml

@@ -1,0 +1,15 @@
+crawlers:
+    HairStyleCrawler:
+      name: HairStyleCrawler
+      type: simpleweb 
+      context:  
+        searchTags: hairstyle
+        sourceAddress: http://hairstyle-blog.com/
+        searchPaths: //p/text()            
+    SkinTypesCrawler:
+      name: SkinTypesCrawler
+      type: simpleweb 
+      context:  
+        searchTags: Skin types
+        sourceAddress: https://www.cleanandclear.in/skin-facts-and-fiction/skin-tips-and-tricks/skin-types
+        searchPaths: //p/text() 
