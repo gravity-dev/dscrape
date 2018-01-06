@@ -3,13 +3,76 @@ crawlers:
       name: HairStyleCrawler
       type: simpleweb 
       context:  
-        searchTags: hairstyle
-        sourceAddress: http://hairstyle-blog.com/
-        searchPaths: //p/text()            
+        searchTags: hairstyle, Women
+        sourceAddress: http://www.stylecraze.com/articles/10-best-indian-hairstyles/
+        searchPaths: Meta:name-description=content           
+    HairStylistBangalore:
+      name: HairStylistBangalore
+      type: simpleweb
+      context:
+        searchTags: HairStylist, Bangalore
+        sourceAddress: http://www.stylecraze.com/articles/best-hairstylists-in-bangalore/
+        searchPaths: Element:post-234889,SubElementClass:entry-content,SubElementClassTag:p=1
     SkinTypesCrawler:
       name: SkinTypesCrawler
       type: simpleweb 
       context:  
-        searchTags: Skin types
+        searchTags: Normal Skin,Combination Skin,Dry Skin,Oily Skin,Sensitive Skin 
         sourceAddress: https://www.cleanandclear.in/skin-facts-and-fiction/skin-tips-and-tricks/skin-types
-        searchPaths: //p/text() 
+        searchPaths: Element:main-content,SubElementClass:field-item even,SubElementClassTag:h3=0
+    FaceCare:
+      name: FaceCare
+      type: simpleweb
+      context:
+        searchTags: Face, Care, Tips, Skin
+        sourceAddress: https://food.ndtv.com/beauty/face-care-tips-10-dos-and-donts-to-get-beautiful-skin-naturally-1217782
+        searchPaths: SubElementClass:w100 artc-desc,SubElementClassTag:em=0
+    MoustacheStyle:
+      name: MoustacheStyle
+      type: simpleweb
+      context:
+        searchTags: Moustache, Style
+        sourceAddress: https://www.thetrendspotter.net/epic-moustache-styles-and-how-to-get-the-look/
+        searchPaths: SubElementClass:entry-content,SubElementClassTag:p=4
+    BeardStyle:
+      name: BeardStyle
+      type: simpleweb
+      context:
+        searchTags: Beard, Style
+        sourceAddress: https://www.mens-hairstylists.com/best-beard-styles-for-men/
+        searchPaths: SubElementClass:entry-content,SubElementClassTag:p=1
+    EyelinerStyle:
+      name: EyelinerStyle
+      type: simpleweb
+      context:
+        searchTags: Eyeliner, Style
+        sourceAddress: https://www.beautifieddesigns.com/eyeliner-styles/
+        searchPaths: SubElementClass:entry-content,SubElementClassTag:p=0
+    EyebrowShapes:
+      name: EyebrowShapes
+      type: simpleweb
+      context:
+        searchTags: Eyebrow, Shape, Style
+        sourceAddress: http://stylecaster.com/beauty/eyebrow-shapes/
+        searchPaths:  SubElementClass:big_first_letter
+    NailArtA:
+      name: NailArtA
+      type: simpleweb
+      context:
+        searchTags: Nail, Art, Style
+        sourceAddress: http://www.goodhousekeeping.com/beauty/nails/g2732/fall-nail-art-ideas/
+        searchPaths: SubElementClass:gallery-description,SubElementClassTag:p=0
+    NailArtB:
+      name: NailArtB
+      type: simpleweb
+      context:
+        searchTags: Nail, Art, Style
+        sourceAddress: http://www.goodhousekeeping.com/beauty/nails/g2538/summer-nail-art-ideas/
+        searchPaths: Meta:name-description=content
+    SuitJacketStyle:
+      name: SuitJacketStyle
+      type: simpleweb
+      context:
+        searchTags: Suit, Jacket, Style
+        sourceAddress: https://www.realmenrealstyle.com/10-suit-jacket-details/
+        searchPaths: SubElementClass:entry-content,SubElementClassTag:p=4   

@@ -1,4 +1,4 @@
-package com.dscrape.engine.web.crawler.impl;
+package com.dscrape.engine.web.crawler.enums;
 
 public enum CrawlerTypeEnum {
 

@@ -1,5 +1,7 @@
 package com.dscrape.engine.web.crawler.base;
 
+import java.util.List;
+
 public interface ICrawlerRegistry {
 
 	public IContentCrawler getCrawler(String name);
@@ -8,6 +10,6 @@ public interface ICrawlerRegistry {
 
 	public void deRegister(String name);
 
-	public void listCrawlers();
+	public List<IContentCrawler> listCrawlers();
 
 }

@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import com.dscrape.engine.web.crawler.base.CrawlerContext;
 import com.dscrape.engine.web.crawler.base.IContentCrawler;
+import com.dscrape.engine.web.crawler.enums.CrawlerTypeEnum;
 
 public abstract class AbstractContentCrawler implements IContentCrawler {
 
@@ -39,4 +40,5 @@ public abstract class AbstractContentCrawler implements IContentCrawler {
 	public String getName() {
 		return this.type.getName();
 	}
+	
 }

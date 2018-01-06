@@ -9,7 +9,7 @@ public class CrawlerContext {
 
 	private String searchTags = null;
 
-	private List<String> serchPaths = null;
+	private List<String> searchPaths = null;
 
 	public String getSourceAddress() {
 		return sourceAddress;
@@ -19,20 +19,20 @@ public class CrawlerContext {
 		return searchTags;
 	}
 
-	public List<String> getSerchPaths() {
-		return serchPaths;
+	public List<String> getSearchPaths() {
+		return searchPaths;
 	}
 
 	public CrawlerContext(String tags, List<String> paths, String source) {
 		this.searchTags = tags;
-		this.serchPaths = paths;
+		this.searchPaths = paths;
 		this.sourceAddress = source;
 	}
 
 	@Override
 	public String toString() {
-		return "CrawlerContext [sourceAddress=" + sourceAddress + ", searchTags=" + searchTags + ", serchPaths="
-				+ Arrays.toString(serchPaths.toArray()) + "]";
+		return "CrawlerContext [sourceAddress=" + sourceAddress + ", searchTags=" + searchTags + ", searchPaths="
+				+ Arrays.toString(searchPaths.toArray()) + "]";
 	}
 
 }

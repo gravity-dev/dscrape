@@ -2,7 +2,7 @@ package com.dscrape.engine.web.crawler.factory;
 
 import com.dscrape.engine.web.crawler.base.CrawlerContext;
 import com.dscrape.engine.web.crawler.base.IContentCrawler;
-import com.dscrape.engine.web.crawler.impl.CrawlerTypeEnum;
+import com.dscrape.engine.web.crawler.enums.CrawlerTypeEnum;
 import com.dscrape.engine.web.crawler.impl.QuoraContentCrawler;
 import com.dscrape.engine.web.crawler.impl.SimpleWebContentCrawler;
 

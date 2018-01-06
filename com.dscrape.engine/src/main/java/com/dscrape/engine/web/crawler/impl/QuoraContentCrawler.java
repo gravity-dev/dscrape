@@ -6,6 +6,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import com.dscrape.engine.web.crawler.base.CrawlerContext;
+import com.dscrape.engine.web.crawler.enums.CrawlerTypeEnum;
 
 public class QuoraContentCrawler extends AbstractContentCrawler {
 

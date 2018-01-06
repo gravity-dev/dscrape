@@ -1,10 +1,14 @@
 package com.dscrape.engine.web.crawler.services;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import com.dscrape.engine.web.crawler.base.IContentCrawler;
 import com.dscrape.engine.web.crawler.base.ICrawlerRegistry;
+import com.dscrape.engine.web.crawler.config.CrawlerDetails;
 
 public class CrawlerRegistryService implements ICrawlerRegistry {
 
@@ -34,7 +38,13 @@ public class CrawlerRegistryService implements ICrawlerRegistry {
 	}
 
 	@Override
-	public void listCrawlers() {
+	public List<IContentCrawler> listCrawlers() {
+		List<IContentCrawler> list = new ArrayList<IContentCrawler>();
+		for (Entry<String, IContentCrawler> entry : registryMap.entrySet()) {
+			list.add(entry.getValue());
+		}
+		return list;
+		
 	}
 
 	@Override

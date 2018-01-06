@@ -13,8 +13,8 @@ import com.dscrape.engine.web.crawler.base.CrawlerContext;
 import com.dscrape.engine.web.crawler.base.IContentCrawler;
 import com.dscrape.engine.web.crawler.config.CrawlerDetails;
 import com.dscrape.engine.web.crawler.config.CrawlerYamlConfig;
+import com.dscrape.engine.web.crawler.enums.CrawlerTypeEnum;
 import com.dscrape.engine.web.crawler.factory.CrawlerFactory;
-import com.dscrape.engine.web.crawler.impl.CrawlerTypeEnum;
 import com.dscrape.engine.web.crawler.services.CrawlerRegistryService;
 
 /**
