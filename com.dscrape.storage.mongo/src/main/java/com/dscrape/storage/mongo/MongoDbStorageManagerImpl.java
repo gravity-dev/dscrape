@@ -108,7 +108,7 @@ public class MongoDbStorageManagerImpl implements IStorageManager {
 				this.getMongoDb().createCollection(coll.getName());
 				
 				//if index defined create indices
-				if (coll.getIndices() != null && coll.getIndices().isEmpty()) {
+				if (coll.getIndices() != null && !coll.getIndices().isEmpty()) {
 					MongoCollection<Document> doc = this.getMongoDb().getCollection(coll.getName());
 					for (String index : coll.getIndices()) {
 						doc.createIndex(Indexes.text(index));
