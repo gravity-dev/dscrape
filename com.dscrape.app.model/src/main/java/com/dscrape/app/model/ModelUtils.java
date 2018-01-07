@@ -1,4 +1,4 @@
-package com.dscrape.storage.mongo.model;
+package com.dscrape.app.model;
 
 import java.util.ArrayList;
 import java.util.List;

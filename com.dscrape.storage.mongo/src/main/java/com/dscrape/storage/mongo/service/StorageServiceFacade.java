@@ -18,7 +18,7 @@ public class StorageServiceFacade implements IStorageService {
 	}
 
 	@Override
-	public IStorageService createInstance() {
+	public IStorageService initialize() {
 		if (storageServiceFacade == null) {
 			storageServiceFacade = new StorageServiceFacade();
 			searchContentService = new SearchContentServiceImpl();

@@ -14,7 +14,7 @@ public interface IStorageService {
 	 * 
 	 * @param manager
 	 */
-	public IStorageService createInstance();
+	public IStorageService initialize();
 
 	/**
 	 * Get content storage service

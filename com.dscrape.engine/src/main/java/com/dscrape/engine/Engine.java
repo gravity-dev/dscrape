@@ -59,7 +59,8 @@ public class Engine {
 
 	/**
 	 * Start engine
-	 * @throws Exception 
+	 * 
+	 * @throws Exception
 	 */
 	private void init() throws Exception {
 		EngineLoggerFactory.info("Starting engine configuration");
@@ -72,7 +73,8 @@ public class Engine {
 	private void startUpStorage() throws Exception {
 		ApplicationConfig appConfig = new ApplicationConfig(
 				YamlReader.parseYamlResource(Engine.class, APPLICATION_CONFIG_FILE));
-		storageService = instantiate(appConfig.getStorageConfig().getProviderClass(), IStorageService.class);
+		storageService = instantiate(appConfig.getStorageConfig().getProviderClass(), IStorageService.class)
+				.initialize();
 		EngineLoggerFactory.info("Loaded Storage Service : " + appConfig.getStorageConfig().getProviderClass());
 
 		storageManager = instantiate(appConfig.getStorageConfig().getStorageManagerClass(), IStorageManager.class);

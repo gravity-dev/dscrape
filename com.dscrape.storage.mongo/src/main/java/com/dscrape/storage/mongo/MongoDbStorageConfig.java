@@ -121,6 +121,11 @@ class DatabaseConfig {
 class DbCollection {
 
 	private String name;
+	private List<String> indices;
+
+	public List<String> getIndices() {
+		return indices;
+	}
 
 	public String getName() {
 		return name;
@@ -128,5 +133,13 @@ class DbCollection {
 
 	public DbCollection(Map<String, Object> config) {
 		this.name = (String) config.get("name");
+		if (config.containsKey("index")) {
+			@SuppressWarnings("unchecked")
+			List<Map<String, String>> listIndexMap = (List<Map<String, String>>) config.get("index");
+			indices = new ArrayList<String>(listIndexMap.size());
+			for (Map<String, String> elem : listIndexMap) {
+				indices.add(elem.get("field"));
+			}
+		}
 	}
 }

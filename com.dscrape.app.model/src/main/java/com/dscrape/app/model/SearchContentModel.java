@@ -1,18 +1,10 @@
-package com.dscrape.storage.mongo.model;
+package com.dscrape.app.model;
 
 import java.util.Date;
 
 public class SearchContentModel implements IModel {
 
-	private String id;
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
+	private String urlIndex;
 
 	private String tags;
 
@@ -22,7 +14,15 @@ public class SearchContentModel implements IModel {
 
 	private Date creatioDate;
 
-	private String crawlerType = "DEFAULT";
+	private String crawlerType = "S";
+
+	public String getUrlIndex() {
+		return urlIndex;
+	}
+
+	public void setUrlIndex(String index) {
+		this.urlIndex = index;
+	}
 
 	public String getTags() {
 		return tags;

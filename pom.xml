@@ -22,6 +22,7 @@
 	<module>com.dscrape.engine</module>
 	<module>com.dscrape.storage.mongo</module>
 	<module>com.dscrape.app.utils</module>
+	<module>com.dscrape.app.model</module>
 	<module>com.dscrape.app.war</module>
   </modules>
   

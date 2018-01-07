@@ -1,4 +1,4 @@
-package com.dscrape.storage.mongo.model;
+package com.dscrape.app.model;
 
 /**
  * Model constants class. Use this to define and read any model related storage

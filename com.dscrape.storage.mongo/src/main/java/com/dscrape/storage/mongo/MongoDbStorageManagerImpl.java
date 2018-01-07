@@ -6,6 +6,7 @@ import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bson.Document;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
 
@@ -17,6 +18,7 @@ import com.mongodb.ServerAddress;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoIterable;
+import com.mongodb.client.model.Indexes;
 
 /**
  * Mongo database storage implementation
@@ -101,8 +103,18 @@ public class MongoDbStorageManagerImpl implements IStorageManager {
 				if (found)
 					break;
 			}
-			if (!found)
+			if (!found) {
+				//create collection
 				this.getMongoDb().createCollection(coll.getName());
+				
+				//if index defined create indices
+				if (coll.getIndices() != null && coll.getIndices().isEmpty()) {
+					MongoCollection<Document> doc = this.getMongoDb().getCollection(coll.getName());
+					for (String index : coll.getIndices()) {
+						doc.createIndex(Indexes.text(index));
+					}
+				}
+			}
 		}
 	}
 }

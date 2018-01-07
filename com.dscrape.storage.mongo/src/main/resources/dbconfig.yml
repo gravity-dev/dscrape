@@ -6,6 +6,6 @@ database:
     password: root
 collections:
     - name: SearchContent
-      #index: tags
+      index: 
+          - field: tags
     - name: Log
-      #index: tags
