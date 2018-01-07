@@ -69,4 +69,9 @@ public class SearchContentModel implements IModel {
 		return ModelConstants.MODEL_SEARCH_CONTENT;
 	}
 
+	@Override
+	public String toString() {
+		return "SearchContentModel [tags=" + tags + ", content=" + content + ", url=" + url + "]";
+	}
+
 }

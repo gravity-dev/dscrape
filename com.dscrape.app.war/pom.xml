@@ -44,6 +44,11 @@
 			<artifactId>com.dscrape.storage.mongo</artifactId>
 			<version>${dscrape.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.gravity.app</groupId>
+			<artifactId>com.dscrape.app.model</artifactId>
+			<version>${dscrape.version}</version>
+		</dependency>
     </dependencies>
     
 

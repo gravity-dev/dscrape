@@ -40,5 +40,13 @@ public abstract class AbstractContentCrawler implements IContentCrawler {
 	public String getName() {
 		return this.type.getName();
 	}
+
+	public CrawlerContext getCtx() {
+		return ctx;
+	}
+
+	public CrawlerTypeEnum getType() {
+		return type;
+	}
 	
 }
